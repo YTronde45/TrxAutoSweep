@@ -2,7 +2,7 @@ const TronWeb = require('tronweb').TronWeb
 
 const tronWeb = new TronWeb({
   fullHost: 'https://tron-rpc.publicnode.com',
-  privateKey: '00d6b431fc76e3716e48c8b5d979149a90faebbe4e6eb5c3888e2e8ceb29c5d0'
+  privateKey: '000000000000000000000000000000000000000000000000'
 });
 
 const sourceAddress = tronWeb.address.fromPrivateKey(tronWeb.defaultPrivateKey);
