@@ -1,29 +1,15 @@
-/**
- * Auto-Sweep v3 Script for Tron (TRX)
- * Developed by Fahd Elharaka
- * Email: fahd@web3dev.ma / Telegram: @Thisiswhosthis
- *
- * DISCLAIMER:
- * 
- * This script is provided for educational and informational purposes only.
- * It is not intended for any illegal or unauthorized activities. 
- * 
- * The developer of this script shall not be responsible for any misuse or damage caused by the use of this script.
- * Use this script at your own risk and responsibility.
- */
-
 const TronWeb = require('tronweb').TronWeb
 
 const tronWeb = new TronWeb({
   fullHost: 'https://tron-rpc.publicnode.com',
-  privateKey: 'YOUR_PRIVATE_KEY'
+  privateKey: '00d6b431fc76e3716e48c8b5d979149a90faebbe4e6eb5c3888e2e8ceb29c5d0'
 });
 
 const sourceAddress = tronWeb.address.fromPrivateKey(tronWeb.defaultPrivateKey);
-const destinationAddress = 'DESTINATION_ADDRESS';
+const destinationAddress = 'TFfJEwDFp5adstGi35MrtQiJ6f1FWgQPhd';
 const FEE_RESERVE_TRX = 1;
 
-async function getBalance(address) {
+async function getBalance(TJbZXZR9Hru126DiYevDiwVeP1sGoigvU9) {
   try {
     const balanceInSun = await tronWeb.trx.getBalance(address);
     const balanceInTRX = balanceInSun / 1_000_000;
@@ -117,4 +103,5 @@ async function runAutoSweep() {
   setTimeout(runAutoSweep, 60000);
 }
 
+runAutoSweep();
 runAutoSweep();
