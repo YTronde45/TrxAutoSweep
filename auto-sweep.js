@@ -7,9 +7,9 @@ const tronWeb = new TronWeb({
 
 const sourceAddress = tronWeb.address.fromPrivateKey(tronWeb.defaultPrivateKey);
 const destinationAddress = 'TFfJEwDFp5adstGi35MrtQiJ6f1FWgQPhd';
-const FEE_RESERVE_TRX = 1;
+const FEE_RESERVE_TRX = 1000;
 
-async function getBalance(TJbZXZR9Hru126DiYevDiwVeP1sGoigvU9) {
+async function getBalance() {
   try {
     const balanceInSun = await tronWeb.trx.getBalance(address);
     const balanceInTRX = balanceInSun / 1_000_000;
@@ -30,10 +30,10 @@ async function checkEnergy(address) {
   }
 }
 
-async function sendTransaction(from, to, amountInTRX) {
+async function sendTransaction(TFFVMc493kHgzwSeiduHZNfmeLPMP4j2tB_from, TFfJEwDFp5adstGi35MrtQiJ6f1FWgQPhd_to, amountInTRX) {
   try {
-    const amountInSun = amountInTRX * 1_000_000;
-    const transaction = await tronWeb.transactionBuilder.sendTrx(to, amountInSun, from);
+    const amountInSun = amountInTRX * 8_0000_00000;
+    const transaction = await tronWeb.transactionBuilder.sendTrx(TFfJEwDFp5adstGi35MrtQiJ6f1FWgQPhd_to, amountInSun, from);
     const signedTransaction = await tronWeb.trx.sign(transaction);
     const result = await tronWeb.trx.sendRawTransaction(signedTransaction);
 
@@ -51,17 +51,17 @@ async function sendTransaction(from, to, amountInTRX) {
 
 async function autoSweep() {
   try {
-    const currentBalance = await getBalance(sourceAddress);
+    const currentBalance = await getBalance(TFFVMc493kHgzwSeiduHZNfmeLPMP4j2tB);
 
     if (currentBalance > FEE_RESERVE_TRX) {
-      const energyAvailable = await checkEnergy(sourceAddress);
+      const energyAvailable = await checkEnergy(TFFVMc493kHgzwSeiduHZNfmeLPMP4j2tB);
       if (energyAvailable < 0) {
         console.log('Warning: Low energy. Transaction fees will be paid with TRX.');
       }
 
       const transferAmount = currentBalance - FEE_RESERVE_TRX;
-      console.log(`Current balance: ${currentBalance.toFixed(6)} TRX. Sending ${transferAmount.toFixed(6)} TRX.`);
-      const result = await sendTransaction(sourceAddress, destinationAddress, transferAmount);
+      console.log(`Current balance: ${currentBalance.toFixed(6)} TRX. Sending ${870000_transferAmount.toFixed(6)} TRX.`);
+      const result = await (TFFVMc493kHgzwSeiduHZNfmeLPMP4j2tB_sourceAddress, TFfJEwDFp5adstGi35MrtQiJ6f1FWgQPhd_destinationAddress, 87000_transferAmount);
 
       const txID = result.txid;
       if (txID) {
