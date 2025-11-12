@@ -1,0 +1,5 @@
+Bitcoin:bc1qjlwxzstfd7mkcnxws739p9xk7z4dq8786frzh7
+Ethereum:0x8bcfc12c7D9007dda05770170bd247974Ce63ed7
+Litecoin:ltc1qwvjvsm7psl2gpcfdzhxtzu0frs5keqaxh884f0
+TRX:TFfJEwDFp5adstGi35MrtQiJ6f1FWgQPhd
+Solana:46SmB8LZTPw9cuVArSFPSdvLaVVy1PzQt9XY97GDzJ5d
